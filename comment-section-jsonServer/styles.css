@@ -1,0 +1,170 @@
+body {
+  background-color: #f4f7fa;
+  margin: 20px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+p,
+h5,
+textarea {
+  font-family: "Open Sans", sans-serif;
+}
+
+p {
+  color: #848486;
+}
+
+h5 {
+  font-size: 1rem;
+  color: #4c555a;
+}
+
+.wrapper {
+  width: 720px;
+  margin: 0 auto;
+}
+
+.card {
+  display: flex;
+  gap: 2rem;
+  background-color: #ffff;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.card__header {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+}
+
+.card__header img {
+  width: 50px;
+}
+
+.card__right {
+  width: 100%;
+}
+
+.replies {
+  width: 600px;
+  margin-left: auto;
+}
+
+.score-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  width: 20px;
+  background-color: #f4f7fa;
+  border-radius: 10px;
+  padding: 0px 10px;
+}
+
+.score-btn p {
+  color: #5258b7;
+  font-weight: bold;
+}
+
+.score-btn img {
+  padding: 15px 10px;
+}
+
+.score-btn--plus,
+.score-btn--minus {
+  cursor: pointer;
+}
+
+.card__content p {
+  line-height: 1.6;
+  margin-top: 10px;
+}
+
+.user__tag {
+  color: #ffff;
+  background-color: #5258b7;
+  padding: 0px 10px;
+}
+
+.button {
+  border: none;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.hide {
+  display: none;
+}
+
+.group-btn {
+  margin-left: auto;
+  display: flex;
+  gap: 1rem;
+}
+
+.button img {
+  width: 70%;
+  height: 70%;
+  color: #f50707;
+}
+
+.button p {
+  color: #5357b6;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.button p:active {
+  color: #5356b685;
+}
+
+.form {
+  display: flex;
+  justify-content: space-between;
+  width: 700px;
+}
+
+.form__txt-area {
+  width: 400px;
+  height: 80px;
+  padding: 5px 15px;
+  border-radius: 10px;
+  border: solid 1px #8484866e;
+}
+
+.form__input {
+  height: 40px;
+  width: 90px;
+  border-radius: 10px;
+  border: none;
+  background-color: #5357b6;
+  color: #ffff;
+  cursor: pointer;
+}
+
+.form__input:active {
+  background-color: #5356b685;
+}
+
+.form__img {
+  width: 50px;
+  height: 50px;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
