@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/favicon-32x32.png"
+    />
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script src="script.js" async></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Frontend Mentor | Single-page design portfolio</title>
+  </head>
+
+  <body>
+    <header class="header | container padding-block">
+      <img class="header__img" src="assets/logo.svg" alt="Logo" />
+      <button class="btn btn--dark">Free Consultation</button>
+    </header>
+
+    <main>
+      <section class="intro | container padding-block">
+        <h1 class="intro__title">Design solutions made easy</h1>
+        <p class="intro__text | spacer">
+          With over ten years of experience in various design disciplines, I’m
+          your one-stop shop for your design needs.
+        </p>
+      </section>
+
+      <section class="cards | container padding-block">
+        <div class="card | bg-accent-800 grid-col-span-2">
+          <img
+            class="card__img"
+            src="assets/pattern-graphic-design.svg"
+            alt="pattern-graphic-design"
+          />
+          <p class="card__text">Graphic Design</p>
+        </div>
+        <div class="card | bg-accent-300">
+          <img
+            class="card__img"
+            src="assets/pattern-ui-ux.svg"
+            alt="pattern-ui-ux"
+          />
+          <p class="card__text">UI/UX</p>
+        </div>
+        <div class="card | bg-secondary-200">
+          <img
+            class="card__img"
+            src="assets/pattern-apps.svg"
+            alt="pattern-apps"
+          />
+          <p class="card__text">Apps</p>
+        </div>
+        <div class="card | bg-accent-400 grid-col-span-2">
+          <img
+            class="card__img"
+            src="assets/pattern-illustrations.svg"
+            alt="pattern-illustrations"
+          />
+          <p class="card__text">Illustrations</p>
+        </div>
+        <div class="card | bg-secondary-400 grid-col-span-2">
+          <img
+            class="card__img"
+            src="assets/pattern-photography.svg"
+            alt="pattern-photography"
+          />
+          <p class="card__text">Photography</p>
+        </div>
+        <div class="card | bg-secondary-600 grid-col-span-2">
+          <img
+            class="card__img"
+            src="assets/pattern-motion-graphics.svg"
+            alt="pattern-motion-graphics"
+          />
+          <p class="card__text">Motion Graphics</p>
+        </div>
+      </section>
+
+      <section class="amy-section | container padding-block">
+        <img src="assets/image-amy.webp" alt="picture or Amy" class="amy-img" />
+        <div class="amy-headings">
+          <h2 class="amy-headings__title | spacer">
+            I’m Amy, and I’d love to work on your next project
+          </h2>
+          <p class="amy-headings__text | spacer">
+            I love working with others to create beautiful design solutions.
+            I’ve designed everything from brand illustrations to complete mobile
+            apps. I’m also handy with a camera!
+          </p>
+          <div class="btn-container">
+            <button class="btn btn--primary | spacer">Free Consultation</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="swiper | container padding-block">
+        <h2 class="slider-title">My work</h2>
+        <div class="swiper-wrapper | spacer">
+          <img
+            src="assets/image-slide-1.jpg"
+            alt="Graphic design"
+            class="swiper-slide"
+            role="img"
+          />
+          <img
+            src="assets/image-slide-2.jpg"
+            alt="Graphic design"
+            class="swiper-slide"
+            role="img"
+          />
+          <img
+            src="assets/image-slide-3.jpg"
+            alt="Print design"
+            class="swiper-slide"
+            role="img"
+          />
+          <img
+            src="assets/image-slide-4.jpg"
+            alt="Print design"
+            class="swiper-slide"
+            role="img"
+          />
+          <img
+            src="assets/image-slide-5.jpg"
+            alt="Typography"
+            class="swiper-slide"
+            role="img"
+          />
+        </div>
+        <div class="button-wrapper | spacer">
+          <div class="swiper-button-prev">
+            <img src="assets/icon-arrow-left.svg" alt="button previous" />
+          </div>
+          <div class="swiper-button-next">
+            <img src="assets/icon-arrow-right.svg" alt="button next" />
+          </div>
+        </div>
+      </section>
+
+      <section class="cta | container padding-block">
+        <div class="cta-wrapper">
+          <h2 class="cta__title">Book a call with me</h2>
+          <p class="cta__text | spacer">
+            I’d love to have a chat to see how I can help you. The best first
+            step is for us to discuss your project during a free consultation.
+            Then we can move forward from there.
+          </p>
+        </div>
+        <button class="btn btn--primary | spacer">Free Consultation</button>
+      </section>
+    </main>
+
+    <footer class="header | container padding-block">
+      <img class="header__img" src="assets/logo.svg" alt="Logo" />
+      <button class="btn btn--dark">Free Consultation</button>
+    </footer>
+  </body>
+</html>
