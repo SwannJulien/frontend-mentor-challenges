@@ -28,11 +28,6 @@ Users should be able to:
 
 ![](./Screenshot%202022-08-04%20at%2013-09-50%20Frontend%20Mentor%20Single-page%20design%20portfolio.png)
 
-### Links
-
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here]([https://your-live-site-url.com](https://swannjulien.github.io/single-page-design-portfolio/)
-
 ## My process
 
 ### Built with
