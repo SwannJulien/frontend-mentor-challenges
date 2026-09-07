@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Frontend Mentor | Time tracking dashboard</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <main class="container">
+        <div class="card card--first | span-2-row">
+          <div class="header | radius-15 clr-100 padding-28">
+            <img class="header__img" src="images/image-jeremy.png" alt="" />
+            <div class="header__text">
+              <p class="header__title">Report for</p>
+              <p class="header__name">Jeremy Robson</p>
+            </div>
+          </div>
+          <div class="body | radius-15">
+            <ul class="body__list | space-evenly">
+              <li>Daily</li>
+              <li>Weekly</li>
+              <li>Monthly</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header | radius-15 clr-200 justify-right">
+            <img class="card-header__img" src="images/icon-work.svg" alt="" />
+          </div>
+          <div class="card-body | radius-15 padding-28">
+            <div class="space-between">
+              <h2 class="card-body__title">Work</h2>
+              <button class="btn">
+                <img src="images/icon-ellipsis.svg" alt="" />
+              </button>
+            </div>
+            <div class="card-body-wrapper space-between">
+              <h3 class="card-body__time">32hrs</h3>
+              <p class="card-body__subtitle">Last Week - 36hrs</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header | radius-15 clr-300 justify-right">
+            <img class="card-header__img" src="images/icon-play.svg" alt="" />
+          </div>
+          <div class="card-body | radius-15 padding-28">
+            <div class="space-between">
+              <h2 class="card-body__title">Play</h2>
+              <button class="btn">
+                <img src="images/icon-ellipsis.svg" alt="" />
+              </button>
+            </div>
+            <div class="card-body-wrapper space-between">
+              <h3 class="card-body__time">10hrs</h3>
+              <p class="card-body__subtitle">Last Week - 8hrs</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header | radius-15 clr-400 justify-right">
+            <img class="card-header__img" src="images/icon-study.svg" alt="" />
+          </div>
+          <div class="card-body | radius-15 padding-28">
+            <div class="space-between">
+              <h2 class="card-body__title">Study</h2>
+              <button class="btn">
+                <img src="images/icon-ellipsis.svg" alt="" />
+              </button>
+            </div>
+            <div class="card-body-wrapper space-between">
+              <h3 class="card-body__time">4hrs</h3>
+              <p class="card-body__subtitle">Last Week - 7hrs</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header | radius-15 clr-500 justify-right">
+            <img
+              class="card-header__img"
+              src="images/icon-exercise.svg"
+              alt=""
+            />
+          </div>
+          <div class="card-body | radius-15 padding-28">
+            <div class="space-between">
+              <h2 class="card-body__title">Exercice</h2>
+              <button class="btn">
+                <img src="images/icon-ellipsis.svg" alt="" />
+              </button>
+            </div>
+            <div class="card-body-wrapper space-between">
+              <h3 class="card-body__time">4hrs</h3>
+              <p class="card-body__subtitle">Last Week - 5hrs</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header | radius-15 clr-600 justify-right">
+            <img
+              class="card-header__img card-header__img--bigger"
+              src="images/icon-social.svg"
+              alt=""
+            />
+          </div>
+          <div class="card-body | radius-15 padding-28">
+            <div class="space-between">
+              <h2 class="card-body__title">Social</h2>
+              <button class="btn">
+                <img src="images/icon-ellipsis.svg" alt="" />
+              </button>
+            </div>
+            <div class="card-body-wrapper space-between">
+              <h3 class="card-body__time">5hrs</h3>
+              <p class="card-body__subtitle">Last Week - 10hrs</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header | radius-15 clr-700 justify-right">
+            <img
+              class="card-header__img"
+              src="images/icon-self-care.svg"
+              alt=""
+            />
+          </div>
+          <div class="card-body | radius-15 padding-28">
+            <div class="space-between">
+              <h2 class="card-body__title">Self Care</h2>
+              <button class="btn">
+                <img src="images/icon-ellipsis.svg" alt="" />
+              </button>
+            </div>
+            <div class="card-body-wrapper space-between">
+              <h3 class="card-body__time">2hrs</h3>
+              <p class="card-body__subtitle">Last Week - 2hrs</p>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by
+      <a href="https://www.frontendmentor.io/profile/SwannJulien"
+        >Swann Julien</a
+      >.
+    </div>
+  </body>
+</html>
