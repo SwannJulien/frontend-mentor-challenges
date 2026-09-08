@@ -4,7 +4,8 @@ window.addEventListener("load", getComments);
 // Get current user information
 function getCurrentUser() {
   var xhr = new XMLHttpRequest();
-  var url = "./data.json/currentUser";
+  // var url = "http://localhost:3000/currentUser";
+  var url = "./data.json";
   xhr.open("GET", url, true);
   xhr.send();
   xhr.onreadystatechange = stateChange;
@@ -13,10 +14,11 @@ function getCurrentUser() {
     if (xhr.readyState == 4 && xhr.status == 200) {
       // Get the JSON file and convert it into an object
       var data = window.JSON.parse(xhr.responseText);
+      var currentUser = data.currentUser;
       // Store every information about the current user into a local storage
-      localStorage.setItem("username", data.username);
-      localStorage.setItem("imagePNG", data.image.png);
-      localStorage.setItem("imageWEBP", data.image.webp);
+      localStorage.setItem("username", currentUser.username);
+      localStorage.setItem("imagePNG", currentUser.image.png);
+      localStorage.setItem("imageWEBP", currentUser.image.webp);
     }
   }
 }
@@ -35,6 +37,7 @@ currentUserImg.setAttribute("src", imagePNG);
 function getComments() {
   // Get comments
   var xhr = new XMLHttpRequest();
+  // var url = "http://localhost:3000";
   var url = "./data.json";
   xhr.open("GET", url, true);
   xhr.send();
@@ -42,7 +45,8 @@ function getComments() {
 
   function stateChange() {
     if (xhr.readyState == 4 && xhr.status == 200) {
-      var comments = window.JSON.parse(xhr.responseText);
+      var data = window.JSON.parse(xhr.responseText);
+      var comments = data.comments;
 
       // Order comments descendingly
       const sortByScore = (arr) => {
@@ -56,14 +60,16 @@ function getComments() {
 
       // Get replies
       var xhr2 = new XMLHttpRequest();
-      var url = "./data.json/replies";
+      // var url = "http://localhost:3000/replies";
+      var url = "./data.json";
       xhr2.open("GET", url, true);
       xhr2.send();
       xhr2.onreadystatechange = stateChange2;
 
       function stateChange2() {
         if (xhr2.readyState == 4 && xhr2.status == 200) {
-          var replies = window.JSON.parse(xhr2.responseText);
+          var data = window.JSON.parse(xhr2.responseText);
+          var replies = data.replies;
 
           // Order replies descendingly
           const sortByScore = (arr) => {
@@ -448,7 +454,7 @@ form.addEventListener("submit", () => {
 
   // XHR object and sendig the comment object to the server
   var xhr = new XMLHttpRequest();
-  var url = "./data.json/comments";
+  var url = "http://localhost:3000/comments";
   xhr.open("POST", url, true);
   xhr.setRequestHeader("Content-type", "application/json;charset=UTF-8");
   xhr.send(JSON.stringify(userJSON));
@@ -514,7 +520,7 @@ container.addEventListener("click", (event) => {
 
     // XHR object and sendig the comment object to the server
     var xhr = new XMLHttpRequest();
-    var url = "./data.json/replies";
+    var url = "http://localhost:3000/replies";
     xhr.open("POST", url, true);
     xhr.setRequestHeader("Content-type", "application/json;charset=UTF-8");
     xhr.send(JSON.stringify(replyJSON));
@@ -541,7 +547,7 @@ container.addEventListener("click", (event) => {
     if (divCard.classList.contains("replies")) {
       // Get replies
       var xhr2 = new XMLHttpRequest();
-      var url = "./data.json/replies";
+      var url = "http://localhost:3000/replies";
       xhr2.open("GET", url, true);
       xhr2.send();
       xhr2.onreadystatechange = stateChange2;
@@ -564,7 +570,7 @@ container.addEventListener("click", (event) => {
     } else {
       // Get comments
       var xhr3 = new XMLHttpRequest();
-      var url = "./data.json/comments";
+      var url = "http://localhost:3000/comments";
       xhr3.open("GET", url, true);
       xhr3.send();
       xhr3.onreadystatechange = stateChange3;
@@ -608,7 +614,7 @@ container.addEventListener("click", (event) => {
 
     // XHR object and sendig the comment object to the server
     var xhr = new XMLHttpRequest();
-    var url = `./data.json/replies/${replyId}`;
+    var url = `http://localhost:3000/replies/${replyId}`;
     xhr.open("PATCH", url, true);
     xhr.setRequestHeader("Content-type", "application/json;charset=UTF-8");
     xhr.send(JSON.stringify(replyJSON));
@@ -635,7 +641,7 @@ container.addEventListener("click", (event) => {
 
     // XHR object and sendig the comment object to the server
     var xhr = new XMLHttpRequest();
-    var url = `./data.json/comments/${replyId}`;
+    var url = `http://localhost:3000/comments/${replyId}`;
     xhr.open("PATCH", url, true);
     xhr.setRequestHeader("Content-type", "application/json;charset=UTF-8");
     xhr.send(JSON.stringify(replyJSON));
@@ -656,14 +662,14 @@ container.addEventListener("click", (event) => {
 
     if (card.classList.contains("replies")) {
       var xhr = new XMLHttpRequest();
-      var url = `./data.json/replies/${id}`;
+      var url = `http://localhost:3000/replies/${id}`;
       xhr.open("DELETE", url, true);
       xhr.send(null);
       location.reload();
     } else {
       // XHR object and sendig the comment object to the server
       var xhr = new XMLHttpRequest();
-      var url = `./data.json/comments/${id}`;
+      var url = `http://localhost:3000/comments/${id}`;
       xhr.open("DELETE", url, true);
       xhr.send(null);
       location.reload();
@@ -694,7 +700,7 @@ container.addEventListener("click", (event) => {
     if (card.classList.contains("replies")) {
       // Inside replies
       var xhr = new XMLHttpRequest();
-      var url = "./data.json/replies";
+      var url = "http://localhost:3000/replies";
       xhr.open("GET", url, true);
       xhr.send();
       xhr.onreadystatechange = stateChange;
@@ -714,7 +720,7 @@ container.addEventListener("click", (event) => {
 
               // Patch the new score into the DB
               var xhr2 = new XMLHttpRequest();
-              var url = `./data.json/replies/${id}`;
+              var url = `http://localhost:3000/replies/${id}`;
               xhr2.open("PATCH", url, true);
               xhr2.setRequestHeader("Content-type", "application/json;charset=UTF-8");
               xhr2.send(JSON.stringify(json));
@@ -728,7 +734,7 @@ container.addEventListener("click", (event) => {
       // Inside a comment
     } else {
       var xhr = new XMLHttpRequest();
-      var url = "./data.json/comments";
+      var url = "http://localhost:3000/comments";
       xhr.open("GET", url, true);
       xhr.send();
       xhr.onreadystatechange = stateChange;
@@ -748,7 +754,7 @@ container.addEventListener("click", (event) => {
 
               // Patch the new score into the DB
               var xhr2 = new XMLHttpRequest();
-              var url = `./data.json/comments/${id}`;
+              var url = `http://localhost:3000/comments/${id}`;
               xhr2.open("PATCH", url, true);
               xhr2.setRequestHeader("Content-type", "application/json;charset=UTF-8");
               xhr2.send(JSON.stringify(json));
@@ -785,7 +791,7 @@ container.addEventListener("click", (event) => {
     if (card.classList.contains("replies")) {
       // Inside a reply
       var xhr = new XMLHttpRequest();
-      var url = "./data.json/replies";
+      var url = "http://localhost:3000/replies";
       xhr.open("GET", url, true);
       xhr.send();
       xhr.onreadystatechange = stateChange;
@@ -805,7 +811,7 @@ container.addEventListener("click", (event) => {
 
               // Patch the new score into the DB
               var xhr2 = new XMLHttpRequest();
-              var url = `./data.json/replies/${id}`;
+              var url = `http://localhost:3000/replies/${id}`;
               xhr2.open("PATCH", url, true);
               xhr2.setRequestHeader("Content-type", "application/json;charset=UTF-8");
               xhr2.send(JSON.stringify(json));
@@ -819,7 +825,7 @@ container.addEventListener("click", (event) => {
       // Inside a comment
     } else {
       var xhr = new XMLHttpRequest();
-      var url = "./data.json/comments";
+      var url = "http://localhost:3000/comments";
       xhr.open("GET", url, true);
       xhr.send();
       xhr.onreadystatechange = stateChange;
@@ -839,7 +845,7 @@ container.addEventListener("click", (event) => {
 
               // Patch the new score into the DB
               var xhr2 = new XMLHttpRequest();
-              var url = `./data.json/comments/${id}`;
+              var url = `http://localhost:3000/comments/${id}`;
               xhr2.open("PATCH", url, true);
               xhr2.setRequestHeader("Content-type", "application/json;charset=UTF-8");
               xhr2.send(JSON.stringify(json));
