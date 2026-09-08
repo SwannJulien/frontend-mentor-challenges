@@ -15,13 +15,13 @@ ul {
 li {
     flex: 20%;
 
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
         flex: 35%;
-    }
+    } 
 
     @media (max-width: 768px) {
         flex: 100%;
-    }
+    } 
 }
 
 a {
@@ -35,11 +35,17 @@ a {
     align-items: center;
 }
 
+.img-container {
+    height: 120px; 
+    overflow: hidden;   
+}
+
 img {
-    border: 1px solid #ddd; /* Gray border */
-    border-radius: 4px;  /* Rounded border */
-    padding: 5px; /* Some padding */
-    width: 150px; /* Set a small width */
+    border: 1px solid #ddd; 
+    border-radius: 4px;
+    padding: 5px;
+    width: 200px;
+    height: auto;
 }
 
 p {
